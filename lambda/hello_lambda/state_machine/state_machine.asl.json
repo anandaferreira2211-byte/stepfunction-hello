@@ -1,0 +1,15 @@
+{
+  "Comment": "State machine que invoca Lambda HelloLambdaLab",
+  "StartAt": "InvokeHelloLambda",
+  "States": {
+    "InvokeHelloLambda": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:us-east-1:436051149897:function:HelloLambdaLab",
+        "Payload.$": "$"
+      },
+      "End": true
+    }
+  }
+}
